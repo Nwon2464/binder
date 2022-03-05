@@ -1,0 +1,23 @@
+------------------------------------------------------------------------------------------
+How to replace all the occurrences in string
+method s.find_first_of(char), s.find_last_of(char)
+char takeNow = 'z';
+int firstIndex = s.find_first_of(takeNow); 
+if(firstIndex == -1){
+	// -1 not found
+}
+			 
+int pos = 0;// you can use "size_t" which is unsigend, size_t is 64bits, int(signed) remains 32bits 
+while ((pos = s.find(takeNow)) != (int)string::npos) {
+	s.replace(pos, 1, ""); // replacing all occurrences until string::npos 
+}
+
+
+------------------------------------------------------------------------------------------
+Another way to store string 
+string s;
+
+while(getline(cin,s)){
+	//code here;
+}
+	

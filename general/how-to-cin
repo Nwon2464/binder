@@ -1,0 +1,174 @@
+#include <bits/stdc++.h>
+
+#define sfl(a)           scanf("%lld",&a)
+
+//using vector like a map
+vector<pair<char, int> > c;
+string s = "11122333";
+for(auto x : s)
+{
+	if(c.empty() || c.back().first != x)
+		c.push_back(make_pair(x, 1));
+	else
+		c.back().second++;
+}
+
+
+
+
+//how to find elements in map<int,int> 
+map<int,int> el;
+
+//you can insert like this 
+el[x]++; //then automatically insert elements {x,x} pairs
+//so you can find something like below
+//suppose el {1,2},  el.find(1) gives {first = 1, second = 2} you can access ->
+if(el.find(a[i])->second != 2 ){ do something }
+//or
+
+map<int, int>::iterator itr = el.find(a[i]);
+auto it = el.find(a[i]) same
+if(itr->second != 2){do something}
+
+//originally, you should access using iterator when iterating MAP		
+map<int, int>::iterator itr;
+for (itr = el.begin(); itr != el.end(); ++itr) {
+cout << '\t' << itr->first
+<< '\t' << itr->second << '\n';
+}
+		
+//----------------------------------------------------------------------------------------		
+
+  pair<ll, ll> a, b;
+  cin >> a >> b;
+  --a.f; --a.s; --b.f; --b.s;
+//need to use template (pair cin template)
+template<typename A, typename B> istream& operator>>(istream& cin, pair<A, B> &p) { cin >> p.first;return cin >> p.second;}
+
+
+//vector gool cin
+vector<int> v(n);
+    for (int &e : v) {
+        cin >> e;
+    }
+
+
+  
+  
+ //2d grid
+ cin >> n >> m;
+ char grid[n][m];
+ string s;
+ f0r(i, n) {
+    cin >> s;
+    f0r(j, m) grid[i][j] = s[j];
+  }
+  
+  
+  
+2d grid
+string mat[405];
+	cin >> n;	
+	for (ll i = 0; i < n; i++) {
+		cin >> mat[i];	
+		for (ll j = 0; j < n; j++) {
+			if (mat[i][j] == '*') v.push_back({i, j});
+		}
+	}
+	
+
+
+int h,w;
+char c[12][12];
+ 
+scanf("%d%d",&h,&w);
+for(int i=0;i<h;i++){
+	scanf("\n");
+	for(int j=0;j<w;j++){
+		scanf("%c",&c[i][j]);
+	}
+}
+
+
+	
+	
+set graph pair insertion
+set <int> a[N];
+a[i].insert(j);
+b[j].insert(i);
+
+
+
+interesting BFS and string compare( look at c)
+for (int c = '1'; c <= '3'; c++) {
+    deque<pair<int, int>> q;
+    for (int i = 0; i < n; i++)
+      for (int j = 0; j < m; j++)
+        if (s[i][j] == c) {
+          dist[c - '1'][i][j] = 0;
+          q.push_back(make_pair(i, j));
+        }
+    //BFS
+    while(!queue.empty()){
+    }
+}
+ 
+ 
+ 
+ vector<vector<pair<int,int>>> same as below
+ vector<pair<int,int>> edges[MAX_N];
+ edges[a].push_back({b, w});
+ edges[b].push_back({a, w});
+ 
+ 
+ 
+ 
+ 
+tree getTree(int n, int offset = 1) {
+    tree res(n);
+    for(int i = 0; i < n - 1; i++) {
+        int a, b;
+        cin >> a >> b;
+        a -= offset, b -= offset;
+        res[a].emplace_back(b);
+        res[b].emplace_back(a);
+    }
+    return res;
+}
+template <typename T> WeightedTree<T> getWeightedTree(int n, int offset = 1) {
+    WeightedTree<T> res(n);
+    for(int i = 0; i < n - 1; i++) {
+        int a, b;
+        cin >> a >> b;
+        a -= offset, b -= offset;
+        T c;
+        cin >> c;
+        res[a].emplace_back(b, c);
+        res[b].emplace_back(a, c);
+    }
+    return res;
+}
+ 
+Graph getGraph(int n, int m, int offset = 1) {
+    Graph res(n);
+    for(int i = 0; i < m; ++i) {
+        int a, b;
+        cin >> a >> b;
+        a -= offset, b -= offset;
+        res[a].emplace_back(b);
+        res[b].emplace_back(a);
+    }
+    return res;
+}
+ 
+template <typename T> WeightedGraph<T> getWeightedGraph(int n, int m, int offset = 1) {
+    WeightedGraph<T> res(n);
+    for(int i = 0; i < m; ++i) {
+        int a, b;
+        cin >> a >> b;
+        T c;
+        cin >> c;
+        res[a].emplace_back(b, c);
+        res[b].emplace_back(a, c);
+    }
+}

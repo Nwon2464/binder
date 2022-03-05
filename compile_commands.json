@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/won/Desktop/cpp/cf",
+  "command": "/usr/bin/c++    -o CMakeFiles/cf.dir/a.cpp.o -c /home/won/Desktop/cpp/cf/a.cpp",
+  "file": "/home/won/Desktop/cpp/cf/a.cpp"
+},
+{
+  "directory": "/home/won/Desktop/cpp/cf",
+  "command": "/usr/bin/c++    -o CMakeFiles/cf.dir/b.cpp.o -c /home/won/Desktop/cpp/cf/b.cpp",
+  "file": "/home/won/Desktop/cpp/cf/b.cpp"
+},
+{
+  "directory": "/home/won/Desktop/cpp/cf",
+  "command": "/usr/bin/c++    -o CMakeFiles/cf.dir/c.cpp.o -c /home/won/Desktop/cpp/cf/c.cpp",
+  "file": "/home/won/Desktop/cpp/cf/c.cpp"
+}
+]

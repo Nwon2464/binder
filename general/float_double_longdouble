@@ -1,0 +1,80 @@
+-------------------------------------------
+float 4bytes        precision of 7 digits
+double 8bytes       precision of 16 digits
+long double 12bytes precision of 19 digits
+-------------------------------------------
+float var1 = 3.1415926535897932   // float fractional value precisely up to 7 digits
+	     | ||||||             // 3.141592 and others are garbage value    
+double var2 = 3.1415926535897932  // double fractional value precisely up to 16 digits 
+              | |||||||||||||||      others are garbage value
+long double var3 = 3.141592653589793213456 //long double fractional value up to 19 digits
+                   | ||||||||||||||||||      others are garbage value
+
+
+printf("%.16f\n",var1);
+printf("%.16f\n",var2);
+printf("%.21f\n",var3);
+
+
+
+actual format specifier for double is "lf" but some compiler won't accept it, so %f will also work 
+actual format specifier for long double is "Lf" capital L and small f.
+
+
+int var1 = 4/9;     // 0  because 4 and 9 is integer 
+printf("%d\n",var1); // 0
+
+
+float var2 = 4/9;     // 0.00 division performed with INTEGER so result getting truncated
+printf("%.2f\n",var2);// 0.00 
+
+
+float var3 = 4.0/9.0;      // 0.44 right answer  changing int value to fractional 
+printf("%.2f\n",var3);     // 0.44 right answer  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Floating Point Numbers (dont use float(precision of 7 digits), just use double (precision of 15digits) long double (precision of 17digits))
+double x = 0.3*3+0.1;
+printf("%.20f\n", x); // 0.99999999999999988898
+It is risky to compare floating point numbers with the == operator, because it is
+possible that the values should be equal but they are not because of precision errors.
+A better way to compare floating point numbers is to assume that two numbers are
+equal if the difference between them is less than ε, where ε is a small number. For
+example, in the following code ε = 10 −9 :
+
+if (abs(a-b) < 1e-9) {
+// a and b are equal
+}
+
+PRECISION ERROR for float, double type >> as a result, add +0.1
+when you cin double
+for example
+double x;
+cin >> x; // you typed 1.11, but IMPORTANT! it is saved as 1.1099999999999999(precision 15 of digits)
+so there is precision error.
+and when you dump your double x into lets say long long integer like
+ll y = x * 100;
+what would be the anwser of y?
+it is not 111. it will be 110 because of precision error + any data type except decimal data
+type (float, double),it always delete decimals.
+
+In order to resolve this issue, or to come up with 111, you need to do +0.5 or +0.1
+so ll y = x * 100 + 0.1 (not nesseccarily 0.1, its ok to plus 0.5 also)
+

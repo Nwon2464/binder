@@ -1,0 +1,43 @@
+
+Time complexity 
+O(1) << O(log n) << O(sqrt(n)) << O(n) << O(n log n) << O(n^2) << O(n^3) << O(2^n) << O(n!)
+
+testcase size Expected time complexity
+  N       Worst TC(Expected TC)          Algorithms
+n ≤ 10    O(n!)                         permutations,subsets
+n ≤ 20    O(2^n)			  traveling sales man with DP
+n ≤ 22    O(2^n * n)                     DP with bitwise 
+n ≤ 100   O(n^4)                         4 nested loops
+n ≤ 500   O(n^3)                         floyd warshall 
+n ≤ 2000  O(n^2 * log n) 		  2 nested loops with binary Search
+n ≤ 10^4  O(n^2)                         Bubble sort
+n ≤ 10^6  O(n log n), O(n)               greedy strategy, 
+n ≤ 10^8  O(n), O(log n) O(1)            linear dp
+n ≤ 10^18 O(log n), o(1)                 n^th fibonaci
+
+Constant O(1)
+Logarithmic O(logn) Binary search, Searching a tree data structure.
+Linear O(n)
+Linearithmic O(nlogn) Heap sort, Merge sort, Quick sort
+Quadratic O(n^2)
+Polynomial O(n^C)
+Exponential O(2^n)
+Factorial O(n!)
+
+
+Data Type		Size (in bytes)	Range
+short int		2	-32,768 to 32,767
+unsigned short int	2	0 to 65,535
+unsigned int		4	0 to 4,294,967,295
+int			4	-2,147,483,648 to 2,147,483,647   -2*10^9 <= int <= 2*10^9 (32-bit)
+long int		8	-2,147,483,648 to 2,147,483,647   
+unsigned long int	8	0 to 4,294,967,295
+long long int		8	-(2^63) to (2^63)-1               -9*10^18 <= ll <= 9*10^18 (64-bit)
+__int128_t(rarely used)        -2^127 to 2^127-1                 -10^38 <= __int128_t <= 10^38 (128-bit)
+unsigned long long int	8	0 to 18,446,744,073,709,551,615
+signed char		1	-128 to 127
+unsigned char		1	0 to 255
+float			4	 
+double			8	 
+long double		12
+
